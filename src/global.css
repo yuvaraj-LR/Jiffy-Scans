@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+    --primary--color: #252424;
+    --secondary-color: #94A3B8;
+    --third-color: #64758B;
+    --text-color: #5A5A62;
+    --blue-color: #6366F1;
+    --input-border-color: #DADCE0;
+    --input-placeholder-color: #9E9E9E;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+input {
+    border: 0;
+    outline: 0;
+    width: 100%;
+    background-color: transparent;
+    font-size: 1.3rem;
+    border: 2px solid var(--input-border-color);
+    height: 40px;
+    padding-inline: 20px;
+}
+
+input::placeholder {
+    color: var(--input-placeholder-color);
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    line-height: 1rem;
+    color: var(--text-color);
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.lighter {
+    font-weight: 200;
+}
+
+.light {
+    font-weight: 300;
+}
+
+.normaler {
+    font-weight: 400;
+}
+
+.normal {
+    font-weight: 500;
+}
+
+.bolder {
+    font-weight: 600;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.line-height-low {
+    line-height: 1rem;
+}
+
+.line-height-normal {
+    line-height: 1.25rem;
+}
+
+.line-height-high {
+    line-height: 1.5rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex_row {
+    flex-direction: row;
+}
+
+.flex_col {
+    flex-direction: column;
+}
+
+.flex_center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex_space_between {
+    justify-content: space-between;
+}
+
+.flex_gap_10 {
+    gap: 10px;
+}
+
+.flex_wrap {
+    flex-wrap: wrap;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.my-auto  {
+    margin-inline: auto;
+}
+
+.p-0 {
+    padding: 0;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.h-100 {
+    height: 100vh;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.text_center {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.onlyForMob {
+    display: block;
+}
+
+.onlyForTab {
+    display: none;
+}
+
+.onlyForLap {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .onlyForMob {
+        display: none;
+    }
+    
+    .onlyForTab {
+        display: block;
+    }
+    
+    .onlyForLap {
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .onlyForMob {
+        display: none;
+    }
+    
+    .onlyForTab {
+        display: none;
+    }
+    
+    .onlyForLap {
+        display: block;
+    }
+}

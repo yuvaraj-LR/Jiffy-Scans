@@ -3,7 +3,7 @@
 </script>
 
 <section>
-    <h1>I am home content</h1>
+    
 </section>
 
 <style>
