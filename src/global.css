@@ -8,6 +8,7 @@
     --blue-color: #6366F1;
     --input-border-color: #DADCE0;
     --input-placeholder-color: #9E9E9E;
+    --input-focus-background-color: #f8f8f8;
 }
 
 * {
@@ -24,12 +25,24 @@ input {
     background-color: transparent;
     font-size: 1.3rem;
     border: 2px solid var(--input-border-color);
-    height: 40px;
-    padding-inline: 20px;
+    height: 50px;
+    padding-left: 100px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+input:focus {
+    border: 2px solid var(--blue-color);
+    color: var(--blue-color);
+    background-color: var(--input-focus-background-color);
 }
 
 input::placeholder {
     color: var(--input-placeholder-color);
+}
+
+input:hover {
+    box-shadow: rgb(189, 223, 255) 0px 4px 16px, rgb(234, 250, 255) 0px 8px 32px;
 }
 
 a {
@@ -39,9 +52,8 @@ a {
     color: var(--text-color);
 }
 
-p {
-    font-size: 1rem;
-    font-weight: 300;
+li {
+    list-style-type: none;
 }
 
 .lighter {
@@ -107,6 +119,14 @@ p {
 
 .flex_wrap {
     flex-wrap: wrap;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
 }
 
 .m-0 {
