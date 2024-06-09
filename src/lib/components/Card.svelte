@@ -48,12 +48,13 @@
     .card {
         padding: 20px;
         margin: 5px 0;
-        transition: 0.3s background-color ease-in-out;
+        transition: 0.3s all ease-in-out;
         cursor: pointer;
         border-radius: 8px;
     }
 
     .card:hover {
+        transform: scale(1.009);
         background-color: var(--heading-seperator-line-color);
     }
 

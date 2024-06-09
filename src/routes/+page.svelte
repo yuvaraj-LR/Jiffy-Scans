@@ -1,7 +1,10 @@
 <script>
     import Card from "$lib/components/Card.svelte";
+  import MoreMenu from "$lib/components/MoreMenu.svelte";
 
     export let data;
+
+    const filterByList = ["Content", "Design", "Frontend", "Backend", "Blockchain"];
 </script>
 
 <section class="flex w-100 home">
@@ -14,16 +17,28 @@
                 <button class="in_review" id="in_review" onclick="toggleWorkHistory(2)">In Review</button>
             </div>
 
-            <div class="flex flex_center home_filters">
+            <div class="flex flex_center relative home_filters">
                 <button class="flex flex_center flex_gap_10 filter_button">
                     <img src="/icons/filter-icon.svg" alt="filter-icon">
                     <h4 class="normal">Filter By</h4>
                 </button>
-                <button class="flex flex_center flex_space_between filter_cata">
+                <button class="flex flex_center flex_space_between filter_cata" id="filter_cata">
                     <span>All</span>
                     <span><img src="/icons/down-arrow-icon.svg" alt="down-arrow-icon"></span>
                 </button>
+
+                <ul class="absolute filter_cata_list hidden" id="filter_cata_list">
+                    {#each filterByList as data}
+                        <MoreMenu {data}/>
+                    {/each}
+                </ul>
             </div>
+
+            <script>
+                document.getElementById("filter_cata").addEventListener("click", () => {
+                    document.getElementById("filter_cata_list").classList.toggle("hidden");
+                });
+            </script>
         </div>
         <div class="home_cards">
             <div class="completed_cards" id="completed_cards">
@@ -140,5 +155,16 @@
 
     .home_cards {
         margin: 15px;
+    }
+
+    .filter_cata_list {
+        top: 42px;
+        left: 155px;
+        border: 1px solid var(--input-border-color);
+        border-radius: 5px;
+        width: 210px;
+        transition: 0.5s all ease-in-out;
+        z-index: 1;
+        background-color: #fff;
     }
 </style>

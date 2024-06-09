@@ -1,27 +1,49 @@
 <script>
+  import MoreMenu from "./MoreMenu.svelte";
 
+    const blockchainMenu = ["UserOps", "Bundles", "Factories", "Pay Masters", "Bundlers"];
+    const developerMenu = ["Knowledge Base", "Github", "API Reference", "API Plans", "Submit An Issue"];
+    const moreMenu = ["About", "Company Docs", "Tools"];
 </script>
 
 <nav class="flex flex_row flex_center flex_space_between"> 
-    <div class="nav_items relative nav_logo">
+    <div class="nav_items relative pointer nav_logo">
         <img src="/icons/jiffyscan-icon.svg" alt="jiffyscan-icon">
     </div>
     <div class="nav_items">
         <ul class="flex flex_row flex_center nav_navigators">
-            <li class="nav_elements">Home</li>
-            <li class="flex flex_center nav_elements">
+            <li class="nav_elements pointer">Home</li>
+            <li class="flex flex_center relative pointer nav_elements" id="blockchain">
                 <span>Blockchain</span>
                 <span><img src="/icons/down-arrow-icon.svg" alt="down-arrow-icon" class="relative down_arrow"></span>
+
+                <ul class="more_menu absolute hidden" id="blockchain_menu">
+                    {#each blockchainMenu as menu}
+                        <MoreMenu data={menu}/>
+                    {/each}
+                </ul>
             </li>
-            <li class="flex flex_center nav_elements">
+            <li class="flex flex_center relative pointer nav_elements" id="developers">
                 <span>Developers</span>
                 <span><img src="/icons/down-arrow-icon.svg" alt="down-arrow-icon" class="relative down_arrow"></span>
+
+                <ul class="more_menu absolute hidden" id="developer_menu">
+                    {#each developerMenu as menu}
+                        <MoreMenu data={menu}/>
+                    {/each}
+                </ul>
             </li>
-            <li class="flex flex_center nav_elements">
+            <li class="flex flex_center relative pointer nav_elements" id="more"> 
                 <span>More</span>
                 <span><img src="/icons/down-arrow-icon.svg" alt="down-arrow-icon" class="relative down_arrow"></span>
+
+                <ul class="more_menu absolute hidden" id="more_menu">
+                    {#each moreMenu as menu}
+                        <MoreMenu data={menu}/>
+                    {/each}
+                </ul>
             </li>
-            <li class="nav_elements">About 4337</li>
+            <li class="nav_elements pointer">About 4337</li>
         </ul>
     </div>
     <div class="nav_items ">
@@ -71,6 +93,18 @@
             <script>
                 document.getElementById("userProfile").addEventListener("click", () => {
                     document.getElementById("userDashboard").classList.toggle("hidden");
+                });
+
+                document.getElementById("blockchain").addEventListener("click", () => {
+                    document.getElementById("blockchain_menu").classList.toggle("hidden");
+                });
+
+                document.getElementById("developers").addEventListener("click", () => {
+                    document.getElementById("developer_menu").classList.toggle("hidden");
+                });
+
+                document.getElementById("more").addEventListener("click", () => {
+                    document.getElementById("more_menu").classList.toggle("hidden");
                 });
             </script>
         </div>
@@ -128,6 +162,10 @@
         gap: 4px;
     }
 
+    .nav_elements:hover {
+        text-decoration: underline;
+    }
+
     .down_arrow {
         top: 3px;
     }
@@ -145,6 +183,31 @@
 
     .dashboard_element {
         padding: 10px;
+    }
+
+    .dashboard_element:hover {
+        text-decoration: underline;
+    }
+
+    .more_menu {
+        border: 1px solid var(--input-border-color);
+        border-radius: 5px;
+        width: 130px;
+        transition: 0.3s all ease-in-out;
+        z-index: 1;
+        background-color: #fff;
+        top: 40px;
+        left: -10px;
+    }
+
+    .user_theme {
+        padding: 5px;
+        border-radius: 25px;
+        cursor: pointer;
+    }
+
+    .user_theme:hover {
+        background-color: var(--input-border-color);
     }
     
 </style>
