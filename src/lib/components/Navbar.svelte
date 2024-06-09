@@ -139,6 +139,8 @@
         border-radius: 5px;
         width: 200px;
         transition: 0.5s all ease-in-out;
+        z-index: 1;
+        background-color: #fff;
     }
 
     .dashboard_element {

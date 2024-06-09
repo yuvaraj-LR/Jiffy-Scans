@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 :root {
-    --primary--color: #252424;
+    --primary-color: #252424;
     --secondary-color: #94A3B8;
     --third-color: #64758B;
     --text-color: #5A5A62;
@@ -9,6 +9,7 @@
     --input-border-color: #DADCE0;
     --input-placeholder-color: #9E9E9E;
     --input-focus-background-color: #f8f8f8;
+    --heading-seperator-line-color: #CBD8E9;
 }
 
 * {
@@ -23,7 +24,7 @@ input {
     outline: 0;
     width: 100%;
     background-color: transparent;
-    font-size: 1.3rem;
+    font-size: 1rem;
     border: 2px solid var(--input-border-color);
     height: 50px;
     padding-left: 100px;
@@ -54,6 +55,16 @@ a {
 
 li {
     list-style-type: none;
+}
+
+button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 1.125rem;
+    padding-inline: 1rem;
+    color: var(--third-color);
+    cursor: pointer;
 }
 
 .lighter {
@@ -177,30 +188,27 @@ li {
     display: none;
 }
 
-@media (min-width: 768px) {
-    .onlyForMob {
-        display: none;
-    }
-    
-    .onlyForTab {
-        display: block;
-    }
-    
-    .onlyForLap {
-        display: none;
-    }
+.design {
+    color: #8948F2;
+    background-color: #F2EDFF;
 }
 
-@media (min-width: 1200px) {
-    .onlyForMob {
-        display: none;
-    }
-    
-    .onlyForTab {
-        display: none;
-    }
-    
-    .onlyForLap {
-        display: block;
-    }
+.frontend {
+    color: #3EA7FF;
+    background-color: #EBF3FF;
+}
+
+.backend {
+    color: #FF8370;
+    background-color: #FFF2EB;
+}
+
+.blockchain {
+    color: #FF3EC9;
+    background-color: #FFEBF9;
+}
+
+.content {
+    color: #5EA8C4;
+    background-color: #EFF6F8;
 }
